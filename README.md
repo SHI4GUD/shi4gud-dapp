@@ -20,8 +20,8 @@
 </p>
 
 <p align="center">
-    <a href="./LICENSE" target="_blank"><img src="https://img.shields.io/github/license/shi4gud/shi4gud-dapp?style=flat" alt="License"></a>
-    <img src="https://img.shields.io/github/package-json/v/shi4gud/shi4gud-dapp?style=flat" alt="Version">
+    <a href="./LICENSE" target="_blank"><img src="https://img.shields.io/github/license/SHI4GUD/shi4gud-dapp?style=flat" alt="License"></a>
+    <img src="https://img.shields.io/github/package-json/v/SHI4GUD/shi4gud-dapp?style=flat" alt="Version">
     <a href="https://x.com/SHI4GUD" target="_blank"><img src="https://img.shields.io/badge/@SHI4GUD-black?style=flat&logo=x&logoColor=white" alt="Project on X"></a>
     <a href="https://x.com/CryptoMonark" target="_blank"><img src="https://img.shields.io/badge/Dev:-@CryptoMonark-black?style=flat&logo=x&logoColor=white&labelColor=black" alt="Author on X"></a>
 </p>
@@ -85,7 +85,7 @@ This project leverages the power of modern web and blockchain development tools.
 ### Architecture Overview
 The SHI4GUD dApp is a modern web application built on a robust and transparent stack. Here's a high-level look at its components:
 
-*   **Frontend**: The user interface is built with React and powered by Vite for a fast, modern development experience. The source code for the dApp is available in this repository: [`shi4gud/shi4gud-dapp`](https://github.com/shi4gud/shi4gud-dapp).
+*   **Frontend**: The user interface is built with React and powered by Vite for a fast, modern development experience. The source code for the dApp is available in this repository: [`SHI4GUD/shi4gud-dapp`](https://github.com/SHI4GUD/shi4gud-dapp).
 *   **Blockchain Interaction**: We use wagmi and viem to handle blockchain interactions. Wallet connections are managed by RainbowKit.
 *   **Smart Contracts**: The application's core logic is decentralized in a suite of smart contracts. The source code is available at [`shi4gud/shi4gud-contracts`](https://github.com/shi4gud/shi4gud-contracts), and you can find detailed documentation for each contract in the ["Contract & Oracles"](https://docs.shi4gud.com/smart-contracts/ktv2factory-contract) section of the docs.
 *   **Off-Chain Services**: A network of off-chain nodes executes the reward selection and votes on-chain to achieve consensus. The source code for the node is available at [`shi4gud/shi4gud-node`](https://github.com/shi4gud/shi4gud-node), and you can find detailed documentation in the ["Off-Chain Nodes"](https://docs.shi4gud.com/node/ktoc) section of the docs.
@@ -153,7 +153,7 @@ Follow these steps to set up a local development environment.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/shi4gud/shi4gud-dapp.git
+    git clone https://github.com/SHI4GUD/shi4gud-dapp.git
     cd shi4gud-dapp
     ```
 
