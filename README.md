@@ -20,8 +20,13 @@
 </p>
 
 <p align="center">
-    <a href="./LICENSE" target="_blank"><img src="https://img.shields.io/github/license/SHI4GUD/shi4gud-dapp?style=flat" alt="License"></a>
-    <img src="https://img.shields.io/github/package-json/v/SHI4GUD/shi4gud-dapp?style=flat" alt="Version">
+    <a href="https://app.shi4gud.com" target="_blank"><img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white" alt="Cloudflare"></a>
+    <a href="https://github.com/SHI4GUD/shi4gud-dapp/commits/main" target="_blank"><img src="https://img.shields.io/github/last-commit/SHI4GUD/shi4gud-dapp?style=flat&logo=github&label=Last%20Commit" alt="Last Commit"></a>
+    <a href="./LICENSE" target="_blank"><img src="https://img.shields.io/github/license/SHI4GUD/shi4gud-dapp?style=flat&label=License" alt="License"></a>
+    <img src="https://img.shields.io/github/package-json/v/SHI4GUD/shi4gud-dapp?style=flat&label=Version" alt="Version">
+</p>
+
+<p align="center">
     <a href="https://x.com/SHI4GUD" target="_blank"><img src="https://img.shields.io/badge/@SHI4GUD-black?style=flat&logo=x&logoColor=white" alt="Project on X"></a>
     <a href="https://x.com/CryptoMonark" target="_blank"><img src="https://img.shields.io/badge/Dev:-@CryptoMonark-black?style=flat&logo=x&logoColor=white&labelColor=black" alt="Author on X"></a>
 </p>

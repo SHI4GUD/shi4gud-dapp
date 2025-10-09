@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import { VERSION_INFO } from '../utils/version';
 
 const VerifyPage: React.FC = () => {
-  const GITHUB_URL = 'https://github.com/shi4gud/shi4gud-dapp';
+  const GITHUB_URL = 'https://github.com/SHI4GUD/shi4gud-dapp';
   const REPO_NAME = 'shi4gud-dapp';
 
   return (
@@ -47,6 +47,55 @@ const VerifyPage: React.FC = () => {
                 {new Date(VERSION_INFO.buildTime).toLocaleString()}
               </span>
             </p>
+          </div>
+        </div>
+
+        {/* Transparency Features */}
+        <div className="bg-gradient-to-r from-[rgba(59,130,246,0.06)] to-[rgba(147,51,234,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(59,130,246,0.15)]">
+          <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">
+            Transparency Features
+          </h2>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
+                <svg className="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm sm:text-base text-gray-300">
+                  <span className="text-gray-100 font-semibold">Cloudflare Pages Deployment</span>
+                  <br />
+                  <span className="text-xs sm:text-sm text-gray-400">
+                    Every commit is automatically deployed via Cloudflare Pages. Look for the green ✓ checkmark on the commit page to confirm successful deployment.{' '}
+                    <a
+                      href={`${GITHUB_URL}/commit/${VERSION_INFO.commit}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-orange-500 hover:text-orange-400 underline"
+                    >
+                      View this commit
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5">
+                <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm sm:text-base text-gray-300">
+                  <span className="text-gray-100 font-semibold">GPG Signed Commits</span>
+                  <br />
+                  <span className="text-xs sm:text-sm text-gray-400">
+                    Commits are cryptographically signed to verify author identity. Look for the "Verified" badge on GitHub commits.
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
