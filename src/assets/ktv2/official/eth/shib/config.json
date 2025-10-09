@@ -1,0 +1,9 @@
+{
+    "address": "0x3A8c5868B9625B8C82650C6B25cE0E6e55c767B4",
+    "tokenAddress": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+    "tokenSymbol": "SHIB",
+    "tokenName": "Shiba Inu",
+    "tokenDecimals": 18,
+    "pool":"0x2F62f2B4c5fcd7570a709DeC05D68EA19c82A9ec",
+    "charity":""
+}

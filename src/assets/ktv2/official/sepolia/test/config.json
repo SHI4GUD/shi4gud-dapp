@@ -1,0 +1,9 @@
+{
+    "address": "0x6A653395F0CA00205427D98BE7A8947D1b8F82E8",
+    "tokenAddress": "0xCbB1dbDBeDDe66D80083701ef087854A7729b60F",
+    "tokenSymbol": "TEST",
+    "tokenName": "TestToken",
+    "tokenDecimals": 18,
+    "pool":"0x37E716DC8BAf95112eF7eab7Fc74d2a21283b3D7",
+    "charity":""
+}

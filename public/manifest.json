@@ -1,0 +1,34 @@
+{
+  "short_name": "SHI4GUD",
+  "name": "SHI4GUD",
+  "lang": "en-US",
+  "description": "Stake to earn. Donate to burn. Shina Inu's revolutionary platform that burns tokens for charity. Earn rewards while making a difference.",
+  "icons": [
+    {
+      "src": "/assets/logos/shi4gud-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logos/shi4gud-mask-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logos/shi4gud-mask-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ff6900",
+  "background_color": "#1a1a2e",
+  "dir": "ltr",
+  "categories": ["finance", "utilities"]
+} 

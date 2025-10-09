@@ -1,0 +1,9 @@
+{
+    "address": "0x0B0b9dCac89Cb585fAc7fC7F7A625870Ac8d9693",
+    "tokenAddress": "0x243cACb4D5fF6814AD668C3e225246efA886AD5a",
+    "tokenSymbol": "SHI",
+    "tokenName": "Shina Inu",
+    "tokenDecimals": 18,
+    "pool":"0x959C7D5706AC0B5a29F506a1019Ba7F2a1C70c70",
+    "charity":""
+}
