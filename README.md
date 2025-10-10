@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-    <a href="https://app.shi4gud.com" target="_blank"><img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white" alt="Cloudflare"></a>
+    <a href="https://www.cloudflare.com" target="_blank"><img src="https://img.shields.io/badge/Hosting-Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white" alt="Hosted on Cloudflare"></a>
     <a href="https://github.com/SHI4GUD/shi4gud-dapp/commits/main" target="_blank"><img src="https://img.shields.io/github/last-commit/SHI4GUD/shi4gud-dapp?style=flat&logo=github&label=Last%20Commit" alt="Last Commit"></a>
     <a href="./LICENSE" target="_blank"><img src="https://img.shields.io/github/license/SHI4GUD/shi4gud-dapp?style=flat&label=License" alt="License"></a>
     <img src="https://img.shields.io/github/package-json/v/SHI4GUD/shi4gud-dapp?style=flat&label=Version" alt="Version">
@@ -34,7 +34,10 @@
 <p align="center">
   A multichain DeFi platform that burns tokens for charity while rewarding stakers. Support good causes through MemeFi.
   <br />
-  <a href="https://docs.shi4gud.com"><strong>Explore the docs »</strong></a>
+  <br />
+  <a href="https://app.shi4gud.com"><strong>🚀 Launch dApp »</strong></a>
+  ·
+  <a href="https://docs.shi4gud.com"><strong>📚 Explore Docs »</strong></a>
   <br />
   <br />
 </p>
