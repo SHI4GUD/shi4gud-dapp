@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Ktv2Dashboard from '../components/features/ktv2/Ktv2Dashboard';
+import GudFundSection from '../components/features/gudfund/GudFundSection';
 import BankIcon from '../components/common/BankIcon';
 import LaunchCountdown from '../components/common/LaunchCountdown';
 
@@ -24,6 +25,8 @@ const HomePage: React.FC = () => {
       </div>
 
       <Ktv2Dashboard onSymbolLoaded={handleSymbolLoaded} />
+      
+      <GudFundSection />
     </div>
   );
 };
