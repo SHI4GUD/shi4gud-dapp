@@ -20,10 +20,10 @@ const GudFundSection: React.FC = () => {
         {/* Mission */}
         <div className="text-center mb-5 sm:mb-6">
           <p className="text-base sm:text-lg md:text-xl text-gray-100 font-semibold mb-2 leading-snug">
-            Our mission is to use MemeFi to support gud causes.
+            From Memes to Meaning
           </p>
           <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-            Donations made through this platform go to the Gud Fund, a Transparent Fund on Endaoment.
+            Participation supports the Gud Fund, a Transparent Fund on Endaoment.
           </p>
         </div>
 
@@ -53,8 +53,7 @@ const GudFundSection: React.FC = () => {
           
           <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed mb-4 sm:mb-5 text-center">
             Endaoment is a 501(c)(3) nonprofit organization that enables transparent, on-chain charitable giving. 
-            By hosting our fund on Endaoment, we ensure complete transparency and accountability for all donations 
-            and grants.
+            By hosting our fund on Endaoment, we ensure complete transparency and accountability.
           </p>
           
           {/* Features Grid */}
@@ -86,7 +85,7 @@ const GudFundSection: React.FC = () => {
         {/* CTA */}
         <div className="text-center">
           <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4 leading-relaxed">
-            Visit our fund page to view real-time balance, transaction history, and donation information
+            Click below to view balance and transaction history
           </p>
           <a
             href={ENDAOMENT_URL}

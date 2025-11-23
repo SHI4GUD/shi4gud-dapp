@@ -16,8 +16,8 @@ export const shibarium: Chain = {
   name: 'Shibarium',
   nativeCurrency: { name: 'Bone ShibaSwap', symbol: 'BONE', decimals: 18 },
   rpcUrls: {
-    default: { http: ['https://www.shibrpc.com', 'https://rpc.shibrpc.com'] },
-    public: { http: ['https://www.shibrpc.com', 'https://rpc.shibrpc.com'] }
+    default: { http: ['https://rpc.shibarium.shib.io'] },
+    public: { http: ['https://rpc.shibarium.shib.io'] }
   },
   blockExplorers: {
     default: { name: 'ShibariumScan', url: 'https://shibariumscan.io' }

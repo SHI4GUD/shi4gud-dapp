@@ -8,8 +8,6 @@
   </a>
 </p>
 
-<h1 align="center">SHI4GUD - Stake to earn. Donate to burn.</h1>
-
 <p align="center">
   <a href="https://vitejs.dev" target="_blank"><img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite"></a>
   <a href="https://react.dev" target="_blank"><img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React"></a>

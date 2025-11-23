@@ -61,9 +61,6 @@ export const wagmiConfig = getDefaultConfig({
       http(`https://base-mainnet.g.alchemy.com/v2/${alchemyKey}`),
       ...(infuraKey ? [http(`https://base-mainnet.infura.io/v3/${infuraKey}`)] : []),
     ]),
-    [shibarium.id]: fallback([
-      http('https://www.shibrpc.com'),
-      http('https://rpc.shibrpc.com'),
-    ]),
+    [shibarium.id]: http('https://rpc.shibarium.shib.io'),
   }
 });
