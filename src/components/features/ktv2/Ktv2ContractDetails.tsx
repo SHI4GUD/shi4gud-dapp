@@ -1,7 +1,7 @@
 import React from 'react';
 import { type Address, formatUnits } from 'viem';
 import { useEpochCountdown } from '../../../hooks/useEpochCountdown';
-import { DollarSign, Heart, Flame, Layers, Clock, Hourglass } from 'lucide-react';
+import { Gift, Heart, Flame, Layers, Clock, Hourglass } from 'lucide-react';
 
 import { useKtv2Jackpot } from '../../../hooks/useKtv2Jackpot';
 import { useKtv2Metrics } from '../../../hooks/useKtv2Metrics';
@@ -79,8 +79,8 @@ const Ktv2ContractDetails: React.FC<Ktv2ContractDetailsProps> = ({
         {/* Jackpot */}
         <div>
           <div className="flex items-center gap-1">
-            <DollarSign className="text-green-400 w-5 h-5" />
-            <span className="text-sm text-zinc-400">Jackpot</span>
+            <Gift className="text-green-400 w-5 h-5" />
+            <span className="text-sm text-zinc-400">Rewards</span>
           </div>
           <div className="text-base sm:text-lg font-semibold">
             {childContractBalanceSuccess && childContractBalance ? (
@@ -99,7 +99,7 @@ const Ktv2ContractDetails: React.FC<Ktv2ContractDetailsProps> = ({
         <div>
           <div className="flex items-center gap-1">
             <Heart className="text-red-400 w-5 h-5" />
-            <span className="text-sm text-zinc-400">Total Donated</span>
+            <span className="text-sm text-zinc-400">Charity</span>
           </div>
           <div className="text-base sm:text-lg font-semibold">
             {totalDonatedData !== undefined ? (
