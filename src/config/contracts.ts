@@ -39,21 +39,21 @@ interface PriceFeedAddresses {
 // Factory contracts per chains
 export const FACTORY_CONTRACTS: ChildContracts = {
   [mainnet.id]: {
-    address: '0xfB348f3975A7BE030a2F672E1eE0265fb5dBF2e2',
+    address: '0x71B9a8Cdc785Dac637056D371e762CDc0f0d9385',
   },
   [sepolia.id]: {
-    address: '0xC4C00ad9E1cA3876079f1EC60cE679201ff6d694',
+    address: '0x8cCaaA26014285dAF6cDeF0e6a51C15198E5936c',
   },
 };
 
 // Default child contracts per chains
 export const DEFAULT_DISPLAY_CHILD_CONTRACT: { [chainId: number]: ChildContractPlaceholder | undefined } = {
   [mainnet.id]: {
-    address: '0x0B0b9dCac89Cb585fAc7fC7F7A625870Ac8d9693', 
+    address: '0xB1511DfE756342CA14a858B4896983095fEc1B51', 
     abi: childContractABI,
   },
   [sepolia.id]: {
-    address: '0x6A653395F0CA00205427D98BE7A8947D1b8F82E8', 
+    address: '0x4a889E3B1feebeABDe205097a87bF9f6FBe51D1B', 
     abi: childContractABI,
   }
 };

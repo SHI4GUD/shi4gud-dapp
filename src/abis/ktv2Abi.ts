@@ -202,8 +202,25 @@ export const ktv2Abi = [
       { "internalType": "address", "name": "", "type": "address" },
       { "internalType": "address", "name": "", "type": "address" }
     ],
-    "name": "hasVoted",
+    "name": "hasVotedAdd",
     "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "", "type": "address" },
+      { "internalType": "address", "name": "", "type": "address" }
+    ],
+    "name": "hasVotedRemove",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "lastStartBlock",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -252,6 +269,13 @@ export const ktv2Abi = [
     "inputs": [],
     "name": "owner",
     "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "pastOcFees",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -499,7 +523,7 @@ export const ktv2Abi = [
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint32[]", "name": "blocks", "type": "uint32[]" }],
+    "inputs": [],
     "name": "withdrawOCFee",
     "outputs": [],
     "stateMutability": "nonpayable",

@@ -1,12 +1,12 @@
 export const officialKtv2Contracts: { [chainId: number]: readonly `0x${string}`[] } = {
   // Mainnet
   1: [
-    "0x0B0b9dCac89Cb585fAc7fC7F7A625870Ac8d9693", // SHI
-    "0x3A8c5868B9625B8C82650C6B25cE0E6e55c767B4", // SHIB
+    "0xB1511DfE756342CA14a858B4896983095fEc1B51", // SHI
+    "0xE9cAFc8c14C44592aB976F5450D0d40f97668ffc", // SHIB
   ],
   // Sepolia
   11155111: [
-    "0x6A653395F0CA00205427D98BE7A8947D1b8F82E8", // TEST
+    "0x4a889E3B1feebeABDe205097a87bF9f6FBe51D1B", // TEST
   ],
   // Base
   8453: [],
