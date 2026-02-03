@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, Calculator, Menu, X, MessageCircleQuestion, FileText } from 'lucide-react';
+import { Globe, Calculator, Menu, X, MessageCircleQuestion, FileText, Flame } from 'lucide-react';
 import CustomConnectButton from '../common/CustomConnectButton';
 import shi4gudLogo from '/assets/logos/shi4gud-light.svg';
 
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     <header className={`text-white px-2 py-4 sm:p-4 fixed w-full top-0 z-50 border-white/10 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-[#1a1a2e]/90 shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-0 md:px-4 lg:px-8 flex justify-between items-center">
         {/* Logo - Left side */}
-        <div className="flex-shrink-0 -my-2">
+        <div className="shrink-0 -my-2">
           {websiteUrl ? (
             <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <img src={shi4gudLogo} alt="SHI4GUD" className="h-12 max-[400px]:h-10 max-[375px]:h-8 max-[350px]:h-7 lg:h-16 w-auto" />
@@ -40,6 +40,10 @@ const Header: React.FC = () => {
         <div className="flex items-center space-x-4">
           {/* Desktop Menu */}
           <nav className="hidden lg:flex space-x-4 items-center">
+            <a href="https://shi4gud.com/bank" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-pink-500 transition-colors flex items-center group">
+              <Flame className="h-4 w-4 mr-1 text-zinc-400 group-hover:text-pink-500 transition-colors" />
+              Banks
+            </a>
             <a href="https://shi4gud.com/faq" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-pink-500 transition-colors flex items-center group">
               <MessageCircleQuestion className="h-4 w-4 mr-1 text-zinc-400 group-hover:text-pink-500 transition-colors" />
               FAQ
@@ -50,15 +54,20 @@ const Header: React.FC = () => {
             </a>
             <a href="https://shinatoken.com" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-pink-500 transition-colors flex items-center group">
               <Globe className="h-4 w-4 mr-1 text-zinc-400 group-hover:text-pink-500 transition-colors" />
-              Shina Token
+              $SHI
             </a>
             <a href="https://shinatools.com" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-pink-500 transition-colors flex items-center group">
               <Calculator className="h-4 w-4 mr-1 text-zinc-400 group-hover:text-pink-500 transition-colors" />
-              Shina Tools
+              Tools
             </a>
             <a href="https://x.com/SHI4GUD" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-pink-500 transition-colors flex items-center group">
               <svg className="h-4 w-4 text-zinc-400 group-hover:text-pink-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+              </svg>
+            </a>
+            <a href="https://t.me/newShinaTokenPortal" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-pink-500 transition-colors flex items-center group">
+              <svg className="h-4 w-4 text-zinc-400 group-hover:text-pink-500 transition-colors" fill="none" viewBox="0 0 15 15">
+                <path stroke="currentColor" strokeLinejoin="round" d="M14.5 1.5l-14 5 4 2 6-4-4 5 6 4 2-12z"></path>
               </svg>
             </a>
             <a href="https://github.com/shi4gud" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-pink-500 transition-colors flex items-center group">
@@ -99,6 +108,16 @@ const Header: React.FC = () => {
         <div className={`p-4 transition-opacity duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}>
           {/* Menu Items Area */}
           <nav className="flex flex-col space-y-1">
+              <a
+                href="https://shi4gud.com/bank"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={commonLinkClasses}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Flame className={commonIconClasses} />
+                Banks
+              </a>
               <a
                 href="https://shi4gud.com/faq"
                 target="_blank"
@@ -150,6 +169,18 @@ const Header: React.FC = () => {
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                 </svg>
                 SHI4GUD
+              </a>
+              <a
+                href="https://t.me/newShinaTokenPortal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={commonLinkClasses}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <svg className={commonIconClasses} fill="none" viewBox="0 0 15 15">
+                  <path stroke="currentColor" strokeLinejoin="round" d="M14.5 1.5l-14 5 4 2 6-4-4 5 6 4 2-12z"></path>
+                </svg>
+                Telegram
               </a>
               <a
                 href="https://github.com/shi4gud"

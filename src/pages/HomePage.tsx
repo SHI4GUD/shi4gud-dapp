@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
 
       <div className="flex justify-center items-center gap-2 mb-10">
         <BankIcon className="text-pink-500 md:w-16 md:h-16 w-12 h-12" />
-        <h1 className="bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent font-bold text-3xl md:text-4xl">{currentTokenSymbol || ''} Burn Bank</h1>
+        <h1 className="bg-linear-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent font-bold text-3xl md:text-4xl">{currentTokenSymbol || ''} Burn Bank</h1>
       </div>
 
       <Ktv2Dashboard onSymbolLoaded={handleSymbolLoaded} />

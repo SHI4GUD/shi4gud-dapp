@@ -20,19 +20,19 @@ const VerifyPage: React.FC = () => {
       </Link>
 
       <h1 className="font-bold text-3xl md:text-4xl mb-8 pb-2 leading-relaxed text-center">
-        <span className="bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
           Verify This Build
         </span>
       </h1>
       
       <div className="space-y-4 sm:space-y-6">
         {/* Current Deployment Section */}
-        <div className="bg-gradient-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.15)]">
+        <div className="bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.15)]">
           <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">
             Current Deployment
           </h2>
           <div className="space-y-2">
-            <p className="text-sm sm:text-base text-gray-300 break-words">
+            <p className="text-sm sm:text-base text-gray-300 warp-break-word">
               <span className="text-gray-400">Commit:</span>{' '}
               <a
                 href={commitUrl}
@@ -45,7 +45,7 @@ const VerifyPage: React.FC = () => {
             </p>
             <p className="text-sm sm:text-base text-gray-300">
               <span className="text-gray-400">Build Time:</span>{' '}
-              <span className="font-mono text-xs sm:text-sm break-words">
+              <span className="font-mono text-xs sm:text-sm warp-break-word">
                 {new Date(VERSION_INFO.buildTime).toLocaleString()}
               </span>
             </p>
@@ -53,7 +53,7 @@ const VerifyPage: React.FC = () => {
         </div>
 
         {/* Cloudflare Pages Deployment Section */}
-        <div className="bg-gradient-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.15)]">
+        <div className="bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.15)]">
           <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white flex items-center gap-2">
             <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
@@ -105,7 +105,7 @@ const VerifyPage: React.FC = () => {
             
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
+                <div className="shrink-0 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                   <svg className="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
@@ -139,13 +139,13 @@ const VerifyPage: React.FC = () => {
         </div>
 
         {/* Transparency Features */}
-        <div className="bg-gradient-to-r from-[rgba(59,130,246,0.06)] to-[rgba(147,51,234,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(59,130,246,0.15)]">
+        <div className="bg-linear-to-r from-[rgba(59,130,246,0.06)] to-[rgba(147,51,234,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(59,130,246,0.15)]">
           <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">
             Transparency Features
           </h2>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5">
+              <div className="shrink-0 w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5">
                 <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
@@ -161,7 +161,7 @@ const VerifyPage: React.FC = () => {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mt-0.5">
+              <div className="shrink-0 w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mt-0.5">
                 <svg className="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                 </svg>
@@ -178,7 +178,7 @@ const VerifyPage: React.FC = () => {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-5 h-5 rounded-full bg-yellow-500/20 flex items-center justify-center mt-0.5">
+              <div className="shrink-0 w-5 h-5 rounded-full bg-yellow-500/20 flex items-center justify-center mt-0.5">
                 <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
@@ -198,7 +198,7 @@ const VerifyPage: React.FC = () => {
         </div>
 
         {/* How to Verify Section */}
-        <div className="bg-gradient-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.15)]">
+        <div className="bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.15)]">
           <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">
             How to Verify
           </h2>
@@ -211,7 +211,7 @@ const VerifyPage: React.FC = () => {
         </div>
 
         {/* Verification Commands Section */}
-        <div className="bg-gradient-to-r from-[rgba(255,107,107,0.08)] to-[rgba(255,142,83,0.08)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.2)]">
+        <div className="bg-linear-to-r from-[rgba(255,107,107,0.08)] to-[rgba(255,142,83,0.08)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.2)]">
           <h3 className="text-base sm:text-lg font-semibold mb-3 text-white">
             Verification Commands
           </h3>
@@ -231,7 +231,7 @@ const VerifyPage: React.FC = () => {
         </div>
 
         {/* What to Compare Section */}
-        <div className="bg-gradient-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.15)]">
+        <div className="bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 rounded-xl border border-[rgba(255,107,107,0.15)]">
           <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">
             What to Compare
           </h2>
@@ -254,7 +254,7 @@ const VerifyPage: React.FC = () => {
             href={commitUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-center bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:from-pink-600 hover:to-orange-600 transition-all font-semibold text-sm sm:text-base shadow-lg"
+            className="inline-block text-center bg-linear-to-r from-pink-500 to-orange-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:from-pink-600 hover:to-orange-600 transition-all font-semibold text-sm sm:text-base shadow-lg"
           >
             View This Commit on GitHub
           </a>
@@ -262,7 +262,7 @@ const VerifyPage: React.FC = () => {
             href={CLOUDFLARE_PAGES_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-center bg-gradient-to-r from-[rgba(255,107,107,0.15)] to-[rgba(255,142,83,0.15)] border border-[rgba(255,107,107,0.3)] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:from-[rgba(255,107,107,0.25)] hover:to-[rgba(255,142,83,0.25)] transition-all font-semibold text-sm sm:text-base"
+            className="inline-block text-center bg-linear-to-r from-[rgba(255,107,107,0.15)] to-[rgba(255,142,83,0.15)] border border-[rgba(255,107,107,0.3)] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:from-[rgba(255,107,107,0.25)] hover:to-[rgba(255,142,83,0.25)] transition-all font-semibold text-sm sm:text-base"
           >
             View Live Deployment
           </a>
@@ -270,7 +270,7 @@ const VerifyPage: React.FC = () => {
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-center bg-gradient-to-r from-[rgba(59,130,246,0.15)] to-[rgba(147,51,234,0.15)] border border-[rgba(59,130,246,0.3)] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:from-[rgba(59,130,246,0.25)] hover:to-[rgba(147,51,234,0.25)] transition-all font-semibold text-sm sm:text-base"
+            className="inline-block text-center bg-linear-to-r from-[rgba(59,130,246,0.15)] to-[rgba(147,51,234,0.15)] border border-[rgba(59,130,246,0.3)] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:from-[rgba(59,130,246,0.25)] hover:to-[rgba(147,51,234,0.25)] transition-all font-semibold text-sm sm:text-base"
           >
             View Repository
           </a>

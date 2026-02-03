@@ -128,6 +128,45 @@ export const calculateTokenUsdValue = (
   }
 };
 
+const COMPACT_SUFFIXES = [
+  { threshold: 1e12, suffix: 'T' },
+  { threshold: 1e9, suffix: 'B' },
+  { threshold: 1e6, suffix: 'M' },
+  { threshold: 1e3, suffix: 'K' },
+] as const;
+
+/**
+ * Formats a number with compact suffixes (k, m, b, t).
+ * @param value The numeric value (number or string).
+ * @param decimals Max decimal places when using a suffix (default 2).
+ * @returns Formatted string, e.g. "1.23m", "456.78k", "12.34b".
+ */
+export const formatCompactNumber = (
+  value: number | string | undefined | null,
+  decimals: number = 2
+): string => {
+  if (value === undefined || value === null || value === '') {
+    return '0';
+  }
+  const num = typeof value === 'string' ? Number(value) : value;
+  if (!Number.isFinite(num) || num < 0) {
+    return '0';
+  }
+  if (num < 1000) {
+    return num.toFixed(decimals).replace(/\.?0+$/, '') || '0';
+  }
+  for (const { threshold, suffix } of COMPACT_SUFFIXES) {
+    if (num >= threshold) {
+      const scaled = num / threshold;
+      const formatted = scaled >= 10
+        ? scaled.toFixed(0)
+        : scaled.toFixed(decimals).replace(/\.?0+$/, '') || scaled.toFixed(0);
+      return `${formatted}${suffix}`;
+    }
+  }
+  return num.toFixed(decimals).replace(/\.?0+$/, '') || '0';
+};
+
 /**
  * Formats a total number of seconds into a string like "Xd Yh Zm Ws".
  * @param totalSeconds The total number of seconds.

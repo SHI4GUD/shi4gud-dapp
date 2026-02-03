@@ -8,6 +8,7 @@ interface TokenInfo {
   tokenName: string;
   tokenAddress?: string;
   logoUrl?: string;
+  details?: boolean;
 }
 
 export function useOfficialTokenInfo(
@@ -34,6 +35,7 @@ export function useOfficialTokenInfo(
               tokenName: config.tokenName,
               tokenAddress: config.tokenAddress,
               logoUrl: config.logoUrl,
+              details: config.details,
             };
           }
         }

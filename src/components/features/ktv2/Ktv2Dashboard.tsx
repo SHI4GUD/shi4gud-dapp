@@ -111,6 +111,14 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
         setSelectedKtv2Details(details);
     }, []);
 
+    // Build Burn Bank Details link from ticker when config has details: true (no hardcoded URL)
+    const detailsLink = useMemo(() => {
+        if (selectedKtv2Details?.details !== true || !selectedKtv2Details?.symbol) return undefined;
+        const base = import.meta.env.VITE_WEBSITE_URL;
+        if (!base) return undefined;
+        return `${String(base).replace(/\/$/, '')}/bank/${selectedKtv2Details.symbol.toLowerCase()}`;
+    }, [selectedKtv2Details?.details, selectedKtv2Details?.symbol]);
+
     // Render Logic
     if (!targetChainId) {
         return (
@@ -133,8 +141,8 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
 
     return (
         <div className='flex flex-col w-full justify-center'>
-            <div className="py-4 flex flex-col lg:flex-row justify-center w-full gap-6 relative">
-                <div className='flex flex-col w-full max-w-3xl p-3 bg-gradient-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] border border-[rgba(255,107,107,0.15)] rounded-xl'>
+            <div className="py-4 grid grid-cols-1 lg:grid-cols-2 lg:items-stretch gap-6 w-full max-w-6xl mx-auto relative">
+                <div className='flex flex-col min-h-0 w-full p-3 bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] border border-[rgba(255,107,107,0.15)] rounded-xl'>
                     <div className="mb-6">
                         <Ktv2Selector 
                             targetChainId={targetChainId!}
@@ -150,12 +158,13 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
                             selectedContractAddress={selectedKtv2Details.address as Address}
                             targetChainId={targetChainId}
                             isChainSupported={isChainSupported}
+                            detailsLink={detailsLink}
                         />
                     )}
                 </div>
                 
                 {selectedKtv2Details?.address ? (
-                    <div className='flex flex-col w-full'>
+                    <div className='flex flex-col min-h-0 w-full h-full'>
                         <Ktv2Actions 
                             ktv2ContractAddress={selectedKtv2Details.address as Address} 
                             targetChainId={targetChainId} 

@@ -110,11 +110,11 @@ const Ktv2Actions: React.FC<Ktv2ActionsProps> = ({
     }
 
     return (
-        <div className="w-full space-y-5 relative p-3 bg-gradient-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] border border-[rgba(255,107,107,0.15)] rounded-xl">
+        <div className="w-full h-full flex flex-col lg:justify-between space-y-5 lg:space-y-4 relative p-3 bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] border border-[rgba(255,107,107,0.15)] rounded-xl">
             {/* Header Display */}
             <div className="flex items-center space-x-2 md:space-x-4">
-                {logoUrl ? <img src={logoUrl} alt={`${displayedName} logo`} className="w-10 h-10 md:w-12 md:h-12 object-cover flex-shrink-0" /> : <Landmark size={48} className="text-orange-500 flex-shrink-0 w-10 h-10 md:w-12 md:h-12" />}
-                <div className="flex-grow">
+                {logoUrl ? <img src={logoUrl} alt={`${displayedName} logo`} className="w-10 h-10 md:w-12 md:h-12 object-cover shrink-0" /> : <Landmark size={48} className="text-orange-500 shrink-0 w-10 h-10 md:w-12 md:h-12" />}
+                <div className="grow">
                     <h3 className="text-xl md:text-2xl font-semibold text-white">
                         {isLoadingTokenData ? 'Loading...' : <a href={getBlockExplorerUrl(erc20TokenAddress)} target="_blank" rel="noopener noreferrer" className="hover:text-pink-500" title={`View ${displayedName} on block explorer`}>{`${displayedName} (${displayedSymbol})`}</a>}
                     </h3>

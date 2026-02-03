@@ -179,7 +179,7 @@ const WithdrawSection: React.FC<WithdrawSectionProps> = ({
   return (
     <div className="space-y-1">
       <div className="flex items-end space-x-2">
-        <div className="relative flex-grow">
+        <div className="relative grow">
           <div className="relative">
             <input
               type="number"
@@ -189,7 +189,7 @@ const WithdrawSection: React.FC<WithdrawSectionProps> = ({
               placeholder="0.0"
               min="0"
               step="any"
-              className="w-full bg-zinc-950/80 border-1 border-white/10 text-white text-md p-3 transition-colors duration-200 hover:border-pink-500 focus:ring-2 focus:ring-pink-500 focus:border-transparent focus:outline-none font-medium placeholder-white pt-1 pb-4 pr-12 rounded-lg"
+              className="w-full bg-zinc-950/80 border border-white/10 text-white text-md p-3 transition-colors duration-200 hover:border-pink-500 focus:ring-2 focus:ring-pink-500 focus:border-transparent focus:outline-none font-medium placeholder-white pt-1 pb-4 pr-12 rounded-lg"
               disabled={isWithdrawing || !erc20TokenAddress || !isConnected}
             />
             <span className="absolute right-4 top-2 text-gray-400 text-sm pointer-events-none">
@@ -202,11 +202,11 @@ const WithdrawSection: React.FC<WithdrawSectionProps> = ({
             )}
           </div>
         </div>
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <button 
             onClick={handleWithdraw} 
             disabled={isButtonDisabled} 
-            className="px-3 py-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-xl hover:opacity-90 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer w-[110px]"
+            className="px-3 py-3 bg-linear-to-r from-pink-500 to-orange-500 text-white rounded-xl hover:opacity-90 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer w-[110px]"
           >
             {isWithdrawing ? 'Withdrawing...' : 'Withdraw'}
           </button>

@@ -25,9 +25,9 @@ const LaunchCountdown: React.FC<LaunchCountdownProps> = ({
   // Show "Coming Soon!" if date is invalid OR countdown is complete
   if (isInvalidDate || timeRemaining.isComplete) {
     return (
-      <div className="w-full mb-8 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-pink-500/10 to-orange-500/10 border border-pink-500/20">
+      <div className="w-full mb-8 p-6 md:p-8 rounded-2xl bg-linear-to-r from-pink-500/10 to-orange-500/10 border border-pink-500/20">
         <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent mb-3 leading-relaxed">
+          <h2 className="text-2xl md:text-3xl font-bold bg-linear-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent mb-3 leading-relaxed">
             Coming Soon!
           </h2>
           <p className="text-gray-400 text-sm md:text-base leading-relaxed">
@@ -40,7 +40,7 @@ const LaunchCountdown: React.FC<LaunchCountdownProps> = ({
 
   const TimeUnit: React.FC<{ value: number; label: string }> = ({ value, label }) => (
     <div className="flex flex-col items-center justify-center p-1.5 md:p-4 rounded-lg md:rounded-xl bg-gray-900/50 border border-pink-500/30 w-[55px] md:w-[90px]">
-      <div className="text-lg md:text-4xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
+      <div className="text-lg md:text-4xl font-bold bg-linear-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
         {value.toString().padStart(2, '0')}
       </div>
       <div className="text-[10px] md:text-sm text-gray-400 mt-0.5 md:mt-1 uppercase tracking-tight md:tracking-wider">
@@ -50,9 +50,9 @@ const LaunchCountdown: React.FC<LaunchCountdownProps> = ({
   );
 
   return (
-    <div className="w-full mb-8 p-3 md:p-8 rounded-2xl bg-gradient-to-r from-pink-500/10 to-orange-500/10 border border-pink-500/20">
+    <div className="w-full mb-8 p-3 md:p-8 rounded-2xl bg-linear-to-r from-pink-500/10 to-orange-500/10 border border-pink-500/20">
       <div className="text-center mb-4 md:mb-6">
-        <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent mb-2">
+        <h2 className="text-xl md:text-2xl font-bold bg-linear-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent mb-2">
           {title}
         </h2>
         <p className="text-gray-400 text-xs md:text-sm mb-1">

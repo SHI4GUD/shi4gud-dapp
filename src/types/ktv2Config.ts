@@ -6,4 +6,5 @@ export interface Ktv2Config {
   tokenDecimals: number;
   charity: string;
   logoUrl?: string;
+  details?: boolean;
 } 

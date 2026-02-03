@@ -10,13 +10,13 @@ const GudFundSection: React.FC = () => {
       {/* Section Header */}
       <div className="flex justify-center items-center gap-2 mb-10">
         <Heart className="text-pink-500 md:w-16 md:h-16 w-12 h-12" />
-        <h2 className="bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent font-bold text-3xl md:text-4xl">
+        <h2 className="bg-linear-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent font-bold text-3xl md:text-4xl">
           Gud Fund
         </h2>
       </div>
 
       {/* Main Content Card */}
-      <div className="bg-gradient-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 md:p-8 rounded-xl border border-[rgba(255,107,107,0.15)]">
+      <div className="bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] p-4 sm:p-6 md:p-8 rounded-xl border border-[rgba(255,107,107,0.15)]">
         {/* Mission */}
         <div className="text-center mb-5 sm:mb-6">
           <p className="text-base sm:text-lg md:text-xl text-gray-100 font-semibold mb-2 leading-snug">
@@ -60,21 +60,21 @@ const GudFundSection: React.FC = () => {
           <div className="flex flex-col sm:grid sm:grid-cols-3 gap-3 sm:gap-4 items-center sm:items-stretch">
             <div className="flex flex-col items-center">
               <p className="text-xs sm:text-sm font-semibold text-gray-100 mb-1 flex items-center justify-center gap-2">
-                <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 flex-shrink-0" />
+                <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 shrink-0" />
                 100% Transparent
               </p>
               <p className="text-xs text-gray-400 leading-relaxed text-center">All transactions on-chain</p>
             </div>
             <div className="flex flex-col items-center">
               <p className="text-xs sm:text-sm font-semibold text-gray-100 mb-1 flex items-center justify-center gap-2">
-                <Wallet className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />
+                <Wallet className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 shrink-0" />
                 Crypto-Native
               </p>
               <p className="text-xs text-gray-400 leading-relaxed text-center">Donate directly with crypto</p>
             </div>
             <div className="flex flex-col items-center">
               <p className="text-xs sm:text-sm font-semibold text-gray-100 mb-1 flex items-center justify-center gap-2">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400 flex-shrink-0" />
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400 shrink-0" />
                 Community-Driven
               </p>
               <p className="text-xs text-gray-400 leading-relaxed text-center">Advised by SHI4GUD</p>
@@ -91,10 +91,10 @@ const GudFundSection: React.FC = () => {
             href={ENDAOMENT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center flex-wrap gap-2 bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:from-pink-600 hover:to-orange-600 transition-all font-semibold shadow-lg text-sm sm:text-base md:text-lg"
+            className="inline-flex items-center justify-center flex-wrap gap-2 bg-linear-to-r from-pink-500 to-orange-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:from-pink-600 hover:to-orange-600 transition-all font-semibold shadow-lg text-sm sm:text-base md:text-lg"
           >
             <span>Visit the Gud Fund on Endaoment</span>
-            <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+            <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
           </a>
         </div>
       </div>

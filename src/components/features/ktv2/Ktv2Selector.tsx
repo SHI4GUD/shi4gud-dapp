@@ -15,6 +15,7 @@ export interface Ktv2SelectionDetails {
   logoUrl?: string;
   name?: string;
   symbol?: string;
+  details?: boolean;
 }
 
 interface Ktv2SelectorProps {
@@ -72,6 +73,7 @@ const Ktv2Selector: React.FC<Ktv2SelectorProps> = ({
         logoUrl: officialInfo?.logoUrl,
         name: officialInfo?.tokenName, 
         symbol: officialInfo?.tokenSymbol,
+        details: officialInfo?.details,
       });
     } else {
       onContractSelected(null);
@@ -115,7 +117,7 @@ const Ktv2Selector: React.FC<Ktv2SelectorProps> = ({
 
     const icon = option.logoUrl ? 
       <img src={option.logoUrl} alt={`${option.label} logo`} style={{ width: iconSize, height: iconSize }} /> : 
-      <Landmark size={iconSize} className="text-orange-500 flex-shrink-0" />;
+      <Landmark size={iconSize} className="text-orange-500 shrink-0" />;
 
     const mainText = (
       <div style={mainTextLineStyles}>
