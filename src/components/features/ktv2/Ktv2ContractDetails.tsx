@@ -9,6 +9,9 @@ import { useKtv2Metrics } from '../../../hooks/useKtv2Metrics';
 import { useKtv2EpochData } from '../../../hooks/useKtv2EpochData';
 import { useKtv2TokenData } from '../../../hooks/useKtv2TokenData';
 
+/** Set to true to show compact numbers (e.g. 1.2M), false to show whole numbers only (no decimals). */
+const FORMAT_METRICS_NUMBERS = false;
+
 interface Ktv2ContractDetailsProps {
   selectedContractAddress: Address | null;
   targetChainId: number | undefined;
@@ -125,7 +128,7 @@ const Ktv2ContractDetails: React.FC<Ktv2ContractDetailsProps> = ({
           </div>
           <div className="text-base sm:text-lg font-semibold">
             {totalBurnedData !== undefined && ktv2TokenDecimals !== undefined ? (
-              <>{formatCompactNumber(formatUnits(totalBurnedData, ktv2TokenDecimals))} <span className="text-xs font-semibold">{ktv2TokenSymbol || 'Tokens'}</span></>
+              <>{FORMAT_METRICS_NUMBERS ? formatCompactNumber(formatUnits(totalBurnedData, ktv2TokenDecimals)) : Math.round(Number(formatUnits(totalBurnedData, ktv2TokenDecimals))).toLocaleString('en-US')} <span className="text-xs font-semibold">{ktv2TokenSymbol || 'Tokens'}</span></>
             ) : isLoadingTotalBurned || isLoadingTokenData ? (
               <span className="text-xs text-gray-500">Loading...</span>
             ) : (
@@ -144,7 +147,7 @@ const Ktv2ContractDetails: React.FC<Ktv2ContractDetailsProps> = ({
           </div>
           <div className="text-base sm:text-lg font-semibold">
             {totalStakedData !== undefined && ktv2TokenDecimals !== undefined ? (
-              <>{formatCompactNumber(formatUnits(totalStakedData, ktv2TokenDecimals))} <span className="text-xs font-semibold">{ktv2TokenSymbol || 'Tokens'}</span></>
+              <>{FORMAT_METRICS_NUMBERS ? formatCompactNumber(formatUnits(totalStakedData, ktv2TokenDecimals)) : Math.round(Number(formatUnits(totalStakedData, ktv2TokenDecimals))).toLocaleString('en-US')} <span className="text-xs font-semibold">{ktv2TokenSymbol || 'Tokens'}</span></>
             ) : isLoadingTotalStaked || isLoadingTokenData ? (
               <span className="text-xs text-gray-500">Loading...</span>
             ) : (
