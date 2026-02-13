@@ -26,7 +26,7 @@ const Header: React.FC = () => {
         {/* Logo - Left side */}
         <div className="shrink-0 -my-2">
           {websiteUrl ? (
-            <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <a href={websiteUrl} rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <img src={shi4gudLogo} alt="SHI4GUD" className="h-12 max-[400px]:h-10 max-[375px]:h-8 max-[350px]:h-7 lg:h-16 w-auto" />
             </a>
           ) : (

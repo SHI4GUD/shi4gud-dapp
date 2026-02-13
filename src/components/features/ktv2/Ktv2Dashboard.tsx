@@ -9,7 +9,10 @@ import Ktv2Actions from './Ktv2Actions';
 import Ktv2Selector, { type Ktv2SelectionDetails } from './Ktv2Selector';
 import { ContractSourceMode } from './Ktv2SelectorTypes';
 import Ktv2ContractDetails from './Ktv2ContractDetails';
+import WinningPreferenceSection from './WinningPreferenceSection';
 import { useViewingChain } from '../../../contexts/ViewingChainContext';
+
+const WINNING_PREFERENCE_ENABLED = import.meta.env.VITE_WINNING_PREFERENCE_ENABLED === 'true';
 
 interface Ktv2DashboardProps {
     onSymbolLoaded?: (symbol: string | null) => void;
@@ -181,6 +184,16 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
                     )
                 )}
             </div>
+
+            {WINNING_PREFERENCE_ENABLED && selectedKtv2Details?.address && (
+                <div className="w-full max-w-6xl mx-auto mt-4 p-4 flex flex-col items-center justify-center text-center bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] border border-[rgba(255,107,107,0.15)] rounded-xl">
+                    <WinningPreferenceSection
+                        ktv2ContractAddress={selectedKtv2Details.address as Address}
+                        targetChainId={targetChainId}
+                        isConnected={isConnected}
+                    />
+                </div>
+            )}
         </div>
     );
 };
