@@ -89,13 +89,13 @@ const WinningPreferenceSection: React.FC<WinningPreferenceSectionProps> = ({
         ) : (
           <Trophy className="text-green-500 w-5 h-5" />
         )}
-        <span className="text-sm text-zinc-400">Winning</span>
+        <span className="text-sm text-white font-medium">{isDeclined === false ? 'Enabled' : isDeclined === true ? 'Disabled' : 'Winning'}</span>
       </div>
       <p className="text-sm text-zinc-300 text-center max-w-md">
         {isDeclined === true
-          ? 'You have declined rewards. OC nodes cannot vote for or send you rewards.'
+          ? 'You are not currently eligible for rewards. You can opt in at any time.'
           : isDeclined === false
-            ? 'You are eligible for rewards. OC nodes can vote for you.'
+            ? 'You are currently eligible for rewards. You can opt out at any time.'
             : 'Loading...'}
       </p>
       <div className="flex flex-wrap gap-2 justify-center">
@@ -105,7 +105,7 @@ const WinningPreferenceSection: React.FC<WinningPreferenceSectionProps> = ({
           disabled={isBusy || isDeclined === false}
           className="px-3 py-1.5 rounded-lg text-sm font-medium bg-green-500/20 text-green-500 border border-green-500/40 hover:bg-green-500/30 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-colors"
         >
-          Allow winning
+          Opt in
         </button>
         <button
           type="button"
@@ -113,7 +113,7 @@ const WinningPreferenceSection: React.FC<WinningPreferenceSectionProps> = ({
           disabled={isBusy || isDeclined === true}
           className="px-3 py-1.5 rounded-lg text-sm font-medium bg-amber-500/20 text-amber-500 border border-amber-500/40 hover:bg-amber-500/30 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-colors"
         >
-          Decline winning
+          Opt out
         </button>
       </div>
     </div>
