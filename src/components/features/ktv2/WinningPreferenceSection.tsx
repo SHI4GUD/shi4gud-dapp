@@ -91,11 +91,11 @@ const WinningPreferenceSection: React.FC<WinningPreferenceSectionProps> = ({
         )}
         <span className="text-sm text-white font-medium">{isDeclined === false ? 'Enabled' : isDeclined === true ? 'Disabled' : 'Winning'}</span>
       </div>
-      <p className="text-sm text-zinc-300 text-center max-w-md">
+      <p className="text-sm text-zinc-300 text-center max-w-md whitespace-pre-line">
         {isDeclined === true
-          ? 'You are not currently eligible for rewards. You can opt in at any time.'
+          ? 'You are not currently eligible for rewards.\nYou can opt in at any time.'
           : isDeclined === false
-            ? 'You are currently eligible for rewards. You can opt out at any time.'
+            ? 'You are currently eligible for rewards.\nYou can opt out at any time.'
             : 'Loading...'}
       </p>
       <div className="flex flex-wrap gap-2 justify-center">
