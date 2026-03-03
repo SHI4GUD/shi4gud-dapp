@@ -1,0 +1,12 @@
+{
+    "address": "",
+    "tokenAddress": "0x76e222b07C53D28b89b0bAc18602810Fc22B49A8",
+    "tokenSymbol": "JOE",
+    "tokenName": "Joe Coin",
+    "tokenDecimals": 18,
+    "pool":"0x704aD8d95C12D7FEA531738faA94402725acB035",
+    "charity":"",
+    "details": false,
+    "comingSoon": true,
+    "official": true
+}

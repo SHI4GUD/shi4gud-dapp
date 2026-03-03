@@ -6,5 +6,7 @@
     "tokenDecimals": 18,
     "pool":"0x959C7D5706AC0B5a29F506a1019Ba7F2a1C70c70",
     "charity":"",
-    "details": true
+    "details": true,
+    "comingSoon": false,
+    "official": true
 }

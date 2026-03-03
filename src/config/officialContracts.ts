@@ -3,6 +3,8 @@ export const officialKtv2Contracts: { [chainId: number]: readonly `0x${string}`[
   1: [
     "0xB1511DfE756342CA14a858B4896983095fEc1B51", // SHI
     "0xE9cAFc8c14C44592aB976F5450D0d40f97668ffc", // SHIB
+    "0x51b2FB972806BA240b7235d011A0969C5C53911A", //PEPE
+    "0x34A7c42507870839232Becd8903FdE86A57011c6", //FLOKI
   ],
   // Sepolia
   11155111: [
@@ -80,4 +82,11 @@ export const getOfficialKtv2ConfigByAddress = (chainPath: string, ktv2Address: s
     }
   }
   return undefined;
+};
+
+/** Banks with comingSoon: true in config.json; shown in dropdown as "Coming Soon" */
+export const getComingSoonBanks = (chainPathSegment: string): Ktv2Config[] => {
+  const chainConfigs = officialKtv2TokenConfigurations[chainPathSegment];
+  if (!chainConfigs) return [];
+  return Object.values(chainConfigs).filter((c): c is Ktv2Config => !!c && c.comingSoon === true);
 };

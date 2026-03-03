@@ -1,0 +1,12 @@
+{
+    "address": "",
+    "tokenAddress": "0xaaeE1A9723aaDB7afA2810263653A34bA2C21C7a",
+    "tokenSymbol": "MOG",
+    "tokenName": "Mog Coin",
+    "tokenDecimals": 18,
+    "pool":"0xc2eaB7d33d3cB97692eCB231A5D0e4A649Cb539d",
+    "charity":"",
+    "details": false,
+    "comingSoon": true,
+    "official": true
+}

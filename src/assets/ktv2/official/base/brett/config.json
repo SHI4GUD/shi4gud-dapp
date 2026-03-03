@@ -1,0 +1,12 @@
+{
+    "address": "",
+    "tokenAddress": "0x532f27101965dd16442E59d40670FaF5eBB142E4",
+    "tokenSymbol": "BRETT",
+    "tokenName": "Brett",
+    "tokenDecimals": 18,
+    "pool":"0xBA3F945812a83471d709BCe9C3CA699A19FB46f7",
+    "charity":"",
+    "details": false,
+    "comingSoon": true,
+    "official": true
+}

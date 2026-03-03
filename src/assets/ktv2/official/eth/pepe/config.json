@@ -1,0 +1,12 @@
+{
+    "address": "0x51b2FB972806BA240b7235d011A0969C5C53911A",
+    "tokenAddress": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+    "tokenSymbol": "PEPE",
+    "tokenName": "Pepe",
+    "tokenDecimals": 18,
+    "pool":"0x11950d141EcB863F01007AdD7D1A342041227b58",
+    "charity":"",
+    "details": false,
+    "comingSoon": true,
+    "official": true
+}

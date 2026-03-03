@@ -1,0 +1,12 @@
+{
+    "address": "",
+    "tokenAddress": "0xB90B2A35C65dBC466b04240097Ca756ad2005295",
+    "tokenSymbol": "BOBO",
+    "tokenName": "BOBO",
+    "tokenDecimals": 18,
+    "pool":"0xe945683B3462D2603a18BDfBB19261C6a4f03aD1",
+    "charity":"",
+    "details": false,
+    "comingSoon": true,
+    "official": true
+}

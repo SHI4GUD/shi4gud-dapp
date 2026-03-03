@@ -1,0 +1,12 @@
+{
+    "address": "0x34A7c42507870839232Becd8903FdE86A57011c6",
+    "tokenAddress": "0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E",
+    "tokenSymbol": "FLOKI",
+    "tokenName": "Floki",
+    "tokenDecimals": 18,
+    "pool":"0xca7c2771D248dCBe09EABE0CE57A62e18dA178c0",
+    "charity":"",
+    "details": false,
+    "comingSoon": true,
+    "official": true
+}

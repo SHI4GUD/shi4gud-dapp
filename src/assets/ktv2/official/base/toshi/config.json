@@ -1,0 +1,12 @@
+{
+    "address": "",
+    "tokenAddress": "0xAC1Bd2486aAf3B5C0fc3Fd868558b082a531B2B4",
+    "tokenSymbol": "TOSHI",
+    "tokenName": "Toshi",
+    "tokenDecimals": 18,
+    "pool":"0x4b0Aaf3EBb163dd45F663b38b6d93f6093EBC2d3",
+    "charity":"",
+    "details": false,
+    "comingSoon": true,
+    "official": true
+}

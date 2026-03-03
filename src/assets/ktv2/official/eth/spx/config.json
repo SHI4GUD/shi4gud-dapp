@@ -1,0 +1,12 @@
+{
+    "address": "",
+    "tokenAddress": "0xE0f63A424a4439cBE457D80E4f4b51aD25b2c56C",
+    "tokenSymbol": "SPX",
+    "tokenName": "SPX6900",
+    "tokenDecimals": 18,
+    "pool":"0x52c77b0CB827aFbAD022E6d6CAF2C44452eDbc39",
+    "charity":"",
+    "details": false,
+    "comingSoon": true,
+    "official": true
+}

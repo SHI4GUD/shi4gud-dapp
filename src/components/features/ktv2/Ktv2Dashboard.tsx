@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react'
 import toast from 'react-hot-toast';
 import { useAccount } from 'wagmi';
 import { type Address } from 'viem';
+import { Hourglass } from 'lucide-react';
 import { getChainName } from '../../../config/chains';
 import { DEFAULT_DISPLAY_CHILD_CONTRACT } from '../../../config/contracts';
 import { useKtv2TokenData } from '../../../hooks/useKtv2TokenData';
@@ -156,7 +157,7 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
                         />
                     </div>
                     
-                    {selectedKtv2Details?.address && (
+                    {selectedKtv2Details?.address && !selectedKtv2Details?.comingSoon && (
                         <Ktv2ContractDetails
                             selectedContractAddress={selectedKtv2Details.address as Address}
                             targetChainId={targetChainId}
@@ -166,7 +167,7 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
                     )}
                 </div>
                 
-                {selectedKtv2Details?.address ? (
+                {selectedKtv2Details?.address && !selectedKtv2Details?.comingSoon ? (
                     <div className='flex flex-col min-h-0 w-full h-full'>
                         <Ktv2Actions 
                             ktv2ContractAddress={selectedKtv2Details.address as Address} 
@@ -175,6 +176,13 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
                             officialName={selectedKtv2Details.name}
                             officialSymbol={selectedKtv2Details.symbol}
                         />
+                    </div>
+                ) : selectedKtv2Details?.comingSoon ? (
+                    <div className="flex flex-col min-h-0 w-full h-full items-center justify-center p-6 text-center border border-[rgba(255,107,107,0.15)] rounded-xl bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)]">
+                        <p className="text-amber-400 font-bold text-xl inline-flex items-center gap-2">
+                            <Hourglass size={24} className="text-amber-400 shrink-0" />
+                            Coming Soon
+                        </p>
                     </div>
                 ) : (
                     !isComingSoon && (
@@ -185,7 +193,7 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
                 )}
             </div>
 
-            {WINNING_PREFERENCE_ENABLED && isConnected && selectedKtv2Details?.address && (
+            {WINNING_PREFERENCE_ENABLED && isConnected && selectedKtv2Details?.address && !selectedKtv2Details?.comingSoon && (
                 <div className="w-full max-w-6xl mx-auto mt-4 p-4 flex flex-col items-center justify-center text-center bg-linear-to-r from-[rgba(255,107,107,0.06)] to-[rgba(255,142,83,0.06)] border border-[rgba(255,107,107,0.15)] rounded-xl">
                     <WinningPreferenceSection
                         ktv2ContractAddress={selectedKtv2Details.address as Address}
