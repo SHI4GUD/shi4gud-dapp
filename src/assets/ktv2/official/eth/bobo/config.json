@@ -1,5 +1,5 @@
 {
-    "address": "",
+    "address": "0xDf1F78Ab786786e5F9D3FbD9841982dA43cDa159",
     "tokenAddress": "0xB90B2A35C65dBC466b04240097Ca756ad2005295",
     "tokenSymbol": "BOBO",
     "tokenName": "BOBO",
@@ -7,6 +7,6 @@
     "pool":"0xe945683B3462D2603a18BDfBB19261C6a4f03aD1",
     "charity":"",
     "details": false,
-    "comingSoon": true,
+    "comingSoon": false,
     "official": true
 }
