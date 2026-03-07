@@ -99,7 +99,8 @@ export const useKtv2TokenData = ({ contractAddress, targetChainId, isChainSuppor
   });
   const isV2 = isV2Data as boolean | undefined;
 
-  // Read token price: v2 -> priceV2 (Uniswap v2), otherwise -> price (Uniswap v3)
+  // Read token price: v2 -> priceV2 (Uniswap v2), otherwise -> price (Uniswap v3).
+  // Reversed pairs (WETH/token) are handled by the heuristic in conversionHelpers.
   const {
     data: ktv2TokenPriceInNativeData,
     error: ktv2TokenPriceInNativeError,

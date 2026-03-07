@@ -86,25 +86,21 @@ export const calculateTokenUsdValue = (
     const scaleFactor = 10n ** 18n;
     const oneNativeToken = 10n ** BigInt(nativePriceDecimals);
 
-    // Heuristic: If 1 token is priced at more than 1 native token, assume the price is inverted.
-    // This works because a direct price (native/token) for a memecoin will be a small fraction,
-    // while an inverted price (token/native) will be a large number.
-    const isPriceInverted = tokenPriceInNative > oneNativeToken;
+    // Reversed-pair heuristic: above this (18-decimal) threshold the value is treated as a ratio
+    // and converted to "native per token". Below it we use the value as native per token. Chosen so
+    // normal low-priced tokens (e.g. ~0.00003 native per token) are not misclassified.
+    const REVERSED_PAIR_THRESHOLD = 10n ** 15n; // 0.001 in 18 decimals
+    const tokenDecimalsScale = 10n ** BigInt(tokenDecimals);
+    const isReversedPair = tokenPriceInNative > REVERSED_PAIR_THRESHOLD;
+    const priceToUse =
+      isReversedPair && tokenPriceInNative !== 0n
+        ? (tokenDecimalsScale * (10n ** 18n)) / tokenPriceInNative
+        : tokenPriceInNative;
 
-    let numerator: bigint;
-    let denominator: bigint;
+    if (tokenPriceInNative === 0n) return null;
 
-    if (isPriceInverted) {
-      // Handle inverted price: (amount / price)
-      if (tokenPriceInNative === 0n) return null;
-      numerator = tokenAmount * nativePriceInUsd * oneNativeToken * scaleFactor;
-      denominator = (10n ** BigInt(tokenDecimals)) * tokenPriceInNative * (10n ** BigInt(nativeToUsdPriceFeedDecimals));
-    } else {
-      // Handle direct price: (amount * price).
-      if (tokenPriceInNative === 0n) return null; // Explicitly handle zero price
-      numerator = tokenAmount * tokenPriceInNative * nativePriceInUsd * scaleFactor;
-      denominator = (10n ** BigInt(tokenDecimals)) * oneNativeToken * (10n ** BigInt(nativeToUsdPriceFeedDecimals));
-    }
+    const numerator = tokenAmount * priceToUse * nativePriceInUsd * scaleFactor;
+    const denominator = tokenDecimalsScale * oneNativeToken * (10n ** BigInt(nativeToUsdPriceFeedDecimals));
 
     if (denominator === 0n) return null;
 
