@@ -4,7 +4,7 @@ import { useAccount } from 'wagmi';
 import { type Address } from 'viem';
 import { Hourglass } from 'lucide-react';
 import { getChainName } from '../../../config/chains';
-import { DEFAULT_DISPLAY_CHILD_CONTRACT } from '../../../config/contracts';
+import { DEFAULT_DISPLAY_CHILD_CONTRACT, DEFAULT_COMING_SOON_BANK } from '../../../config/contracts';
 import { useKtv2TokenData } from '../../../hooks/useKtv2TokenData';
 import Ktv2Actions from './Ktv2Actions';
 import Ktv2Selector, { type Ktv2SelectionDetails } from './Ktv2Selector';
@@ -56,13 +56,18 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
     // State for the details selected by Ktv2Selector
     const [selectedKtv2Details, setSelectedKtv2Details] = useState<Ktv2SelectionDetails | null>(null);
 
-    // Determine the preferred default contract address for the current chain
+    // Preferred default: real contract address, or null when chain uses a default Coming Soon bank.
     const preferredDefaultAddress = useMemo(() => {
+        if (targetChainId && DEFAULT_COMING_SOON_BANK[targetChainId]) {
+            return null;
+        }
         if (targetChainId && DEFAULT_DISPLAY_CHILD_CONTRACT[targetChainId]) {
             return DEFAULT_DISPLAY_CHILD_CONTRACT[targetChainId]!.address;
         }
         return null;
     }, [targetChainId]);
+
+    const preferredDefaultComingSoonSymbol = targetChainId ? DEFAULT_COMING_SOON_BANK[targetChainId] ?? null : null;
 
     // Use the custom hook to fetch only necessary data for this component
     const {
@@ -153,6 +158,7 @@ const Ktv2Dashboard: React.FC<Ktv2DashboardProps> = ({ onSymbolLoaded }) => {
                             onContractSelected={handleContractSelected}
                             contractSourceMode={ContractSourceMode.HARDCODED_ONLY}
                             preferredDefaultContractAddress={preferredDefaultAddress}
+                            preferredDefaultComingSoonSymbol={preferredDefaultComingSoonSymbol}
                             onComingSoonChange={setIsComingSoon}
                         />
                     </div>

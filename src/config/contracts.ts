@@ -44,18 +44,26 @@ export const FACTORY_CONTRACTS: ChildContracts = {
   [sepolia.id]: {
     address: '0x8cCaaA26014285dAF6cDeF0e6a51C15198E5936c',
   },
+  [base.id]: {
+    address: '0xE9035664b357468e2f64ac34f28470F71931F2Cd',
+  },
 };
 
-// Default child contracts per chains
+// Default child contracts per chains (real deployed banks)
 export const DEFAULT_DISPLAY_CHILD_CONTRACT: { [chainId: number]: ChildContractPlaceholder | undefined } = {
   [mainnet.id]: {
-    address: '0xB1511DfE756342CA14a858B4896983095fEc1B51', 
+    address: '0xB1511DfE756342CA14a858B4896983095fEc1B51',
     abi: childContractABI,
   },
   [sepolia.id]: {
-    address: '0x4a889E3B1feebeABDe205097a87bF9f6FBe51D1B', 
+    address: '0x4a889E3B1feebeABDe205097a87bF9f6FBe51D1B',
     abi: childContractABI,
-  }
+  },
+};
+
+/** Default "Coming Soon" bank per chain (tokenSymbol from official config). When set, the selector defaults to this bank instead of a real contract. */
+export const DEFAULT_COMING_SOON_BANK: { [chainId: number]: string | undefined } = {
+  [base.id]: 'BRETT',
 };
 
 // Chainlink price feeds per chains

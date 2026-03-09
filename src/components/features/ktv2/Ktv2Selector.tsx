@@ -26,6 +26,8 @@ interface Ktv2SelectorProps {
   onContractSelected: (details: Ktv2SelectionDetails | null) => void;
   contractSourceMode?: ContractSourceMode;
   preferredDefaultContractAddress?: string | null;
+  /** When set, default to this Coming Soon bank (tokenSymbol) when no real contract is selected. */
+  preferredDefaultComingSoonSymbol?: string | null;
   onComingSoonChange?: (isComingSoon: boolean) => void;
 }
 
@@ -36,6 +38,7 @@ const Ktv2Selector: React.FC<Ktv2SelectorProps> = ({
   onContractSelected,
   contractSourceMode = ContractSourceMode.HARDCODED_ONLY,
   preferredDefaultContractAddress = null,
+  preferredDefaultComingSoonSymbol = null,
   onComingSoonChange,
 }) => {
   /** Selected value: Address for a real bank, or `coming-soon-${symbol}` for a Coming Soon bank */
@@ -74,18 +77,18 @@ const Ktv2Selector: React.FC<Ktv2SelectorProps> = ({
         setSelectedOptionValue(finalContractList[0]);
       }
     } else if (comingSoonBanks.length > 0) {
-      if (!selectedOptionValue || (typeof selectedOptionValue !== 'string')) {
-        setSelectedOptionValue(`${COMING_SOON_PREFIX}${comingSoonBanks[0].tokenSymbol}`);
-      } else if (typeof selectedOptionValue === 'string' && selectedOptionValue.startsWith(COMING_SOON_PREFIX)) {
-        const symbol = selectedOptionValue.slice(COMING_SOON_PREFIX.length);
-        if (!comingSoonBanks.some(c => c.tokenSymbol === symbol)) {
-          setSelectedOptionValue(`${COMING_SOON_PREFIX}${comingSoonBanks[0].tokenSymbol}`);
-        }
+      const defaultComingSoon = preferredDefaultComingSoonSymbol && comingSoonBanks.some(c => c.tokenSymbol === preferredDefaultComingSoonSymbol)
+        ? preferredDefaultComingSoonSymbol
+        : comingSoonBanks[0].tokenSymbol;
+      const isComingSoonSelection = typeof selectedOptionValue === 'string' && selectedOptionValue.startsWith(COMING_SOON_PREFIX);
+      const validComingSoonSymbol = isComingSoonSelection && comingSoonBanks.some(c => c.tokenSymbol === selectedOptionValue.slice(COMING_SOON_PREFIX.length));
+      if (!selectedOptionValue || (typeof selectedOptionValue !== 'string') || !isComingSoonSelection || !validComingSoonSymbol) {
+        setSelectedOptionValue(`${COMING_SOON_PREFIX}${defaultComingSoon}`);
       }
     } else {
       setSelectedOptionValue(null);
     }
-  }, [finalContractList, preferredDefaultContractAddress, comingSoonBanks]);
+  }, [finalContractList, preferredDefaultContractAddress, preferredDefaultComingSoonSymbol, comingSoonBanks]);
 
   useEffect(() => {
     if (typeof selectedOptionValue === 'string' && selectedOptionValue.startsWith(COMING_SOON_PREFIX)) {
