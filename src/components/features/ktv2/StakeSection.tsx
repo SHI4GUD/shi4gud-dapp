@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import toast from 'react-hot-toast';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
-import { type Address, type BaseError, parseUnits } from 'viem';
+import { type Address, type BaseError, parseUnits, formatUnits } from 'viem';
 import { childContractABI, erc20ABI } from '../../../config/contracts';
 import { getChainName } from '../../../config/chains';
 import { calculateTokenUsdValue } from '../../../utils/conversionHelpers';
@@ -168,6 +168,13 @@ const StakeSection: React.FC<StakeSectionProps> = ({
       setStakeAmount(value);
     }
   };
+
+  const handleMaxStake = () => {
+    if (userErc20Balance === undefined || typeof erc20Decimals !== 'number') return;
+    setStakeAmount(formatUnits(userErc20Balance, erc20Decimals));
+  };
+
+  const canMaxStake = isConnected && !!erc20TokenAddress && userErc20Balance !== undefined && userErc20Balance > 0n && typeof erc20Decimals === 'number';
   
   // Transaction Handlers
   const handleApprove = async () => {
@@ -267,6 +274,14 @@ const StakeSection: React.FC<StakeSectionProps> = ({
             <span className="absolute right-4 top-2 text-gray-400 text-sm pointer-events-none">
               {defaultErc20Symbol}
             </span>
+            <button
+              type="button"
+              onClick={handleMaxStake}
+              disabled={!canMaxStake || isApproving || isStaking}
+              className="absolute right-4 bottom-1 text-[11px] font-semibold text-pink-500 hover:text-pink-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+            >
+              Max
+            </button>
             {stakeAmount && parseFloat(stakeAmount) > 0 && stakeAmountUsd !== '' && (
               <span className="absolute left-3 bottom-1 text-[11px] text-gray-400 pointer-events-none">
                 ~${stakeAmountUsd}

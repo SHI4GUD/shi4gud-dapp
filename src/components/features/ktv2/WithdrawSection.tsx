@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import toast from 'react-hot-toast';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
-import { type Address, type BaseError, parseUnits } from 'viem';
+import { type Address, type BaseError, parseUnits, formatUnits } from 'viem';
 import { childContractABI } from '../../../config/contracts';
 import { getChainName } from '../../../config/chains';
 import { calculateTokenUsdValue } from '../../../utils/conversionHelpers';
@@ -127,6 +127,13 @@ const WithdrawSection: React.FC<WithdrawSectionProps> = ({
     }
   };
 
+  const handleMaxWithdraw = () => {
+    if (userStakedBalance === undefined || typeof erc20Decimals !== 'number') return;
+    setWithdrawAmount(formatUnits(userStakedBalance, erc20Decimals));
+  };
+
+  const canMaxWithdraw = isConnected && !!erc20TokenAddress && userStakedBalance !== undefined && userStakedBalance > 0n && typeof erc20Decimals === 'number';
+
   // Transaction submission handler
   const handleWithdraw = async () => {
     // Pre-flight checks
@@ -195,6 +202,14 @@ const WithdrawSection: React.FC<WithdrawSectionProps> = ({
             <span className="absolute right-4 top-2 text-gray-400 text-sm pointer-events-none">
               {defaultErc20Symbol}
             </span>
+            <button
+              type="button"
+              onClick={handleMaxWithdraw}
+              disabled={!canMaxWithdraw || isWithdrawing}
+              className="absolute right-4 bottom-1 text-[11px] font-semibold text-pink-500 hover:text-pink-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+            >
+              Max
+            </button>
             {withdrawAmount && parseFloat(withdrawAmount) > 0 && withdrawAmountUsd !== '' && (
               <span className="absolute left-3 bottom-1 text-[11px] text-gray-400 pointer-events-none">
                 ~${withdrawAmountUsd}
