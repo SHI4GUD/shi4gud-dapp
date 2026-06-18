@@ -13,9 +13,15 @@ const Footer: React.FC = () => {
       <div className="w-full my-4">
         <Socials />
       </div>
-      <p className="text-sm font-semibold mb-1">Disclaimer</p>
-      <p className="text-[0.5rem] sm:text-[0.625rem] leading-relaxed mb-4 max-w-6xl mx-auto">
-        Please do your own research and consult your financial and legal advisors before purchasing, staking or donating tokens. By staking tokens, you agree that the SHI4GUD team is not legally responsible or financially responsible for any losses or taxes incurred. The SHI4GUD team communicates no expectations of gains and no expectations of anything else. We do not recommend that you buy, sell, stake, or hold any cryptocurrency including Shina Inu or Shiba Inu. Placing your SHI or ETH or any other asset into this application could and may result in permanent loss of all your funds. The SHI4GUD team is not liable for any losses incurred for any reason including misuse or bugs in our code. We provide no guarantee that the application will work. We provide no way to recover funds if they are lost for any reason including a bug or error in our code. You use this application at your own risk. We provide no guarantee of returns in any application created by our team. By using any of these applications built by our team you acknowledge that you are using them at your own risk.
+      <p className="text-sm mb-4">
+        <a
+          href="https://shi4gud.com/terms-of-use"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-orange-500 hover:text-orange-400 transition-colors"
+        >
+          Disclaimer &amp; Terms of Use
+        </a>
       </p>
       <img 
         src={shi4gudLogo} 
